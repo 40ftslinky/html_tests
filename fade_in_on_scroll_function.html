@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!--[if lte IE 6]><html class="preIE7 preIE8 preIE9"><![endif]-->
+<!--[if IE 7]><html class="preIE8 preIE9"><![endif]-->
+<!--[if IE 8]><html class="preIE9"><![endif]-->
+<!--[if gte IE 9]><!--><html><!--<![endif]-->
+  <head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>FADE IN ON SCROLL</title>
+  <style type="text/css">
+  #container
+{
+   height:2000px;
+}
+
+#container DIV
+{
+   margin:50px;
+   padding:50px;
+   background-color:lightgreen;
+}
+
+.hideme
+{
+   opacity:0;
+}
+  </style>
+  
+  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+  <script type="text/javascript">
+
+  $(document).ready(function() {
+
+      /* Every time the window is scrolled ... */
+      $(window).scroll( function(){
+
+          /* Check the location of each desired element */
+          $('.hideme').each( function(i){
+
+              var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+              var bottom_of_window = $(window).scrollTop() + $(window).height();
+
+              /* If the object is completely visible in the window, fade it it */
+              if( bottom_of_window > bottom_of_object ){
+
+                  $(this).animate({'opacity':'1'},500);
+
+              }
+
+          });
+
+      });
+
+  });
+
+  </script>
+
+  </head>
+  <body>
+
+  <div id="container">
+
+    <div>Hello</div>
+    <div>Hello</div>
+    <div>Hello</div>
+    <div>Hello</div>
+    <div>Hello</div>
+    <div>Hello</div>
+    <div class="hideme">Fade In</div>
+    <div class="hideme">Fade In</div>
+    <div class="hideme">Fade In</div>
+    <div class="hideme">Fade In</div>
+    <div class="hideme">Fade In</div>
+
+</div>
+
+
+  </body>
+</html>

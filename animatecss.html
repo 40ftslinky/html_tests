@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--[if lte IE 6]><html class="preIE7 preIE8 preIE9"><![endif]-->
+<!--[if IE 7]><html class="preIE8 preIE9"><![endif]-->
+<!--[if IE 8]><html class="preIE9"><![endif]-->
+<!--[if gte IE 9]><!--><html><!--<![endif]-->
+  <head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>title</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+<style type="text/css">
+.option {
+    -webkit-animation-duration: 3s;
+    -webkit-animation-delay: 2s;
+    -webkit-animation-iteration-count: 5;
+}
+</style>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<script language="javascript">
+  $(function() {
+      $("#ref").click(function() {
+          animate(".demo", 'bounce');
+          return false;
+      });
+  });
+
+  function animate(element_ID, animation) {
+      $(element_ID).addClass(animation);
+      var wait = window.setTimeout( function(){
+          $(element_ID).removeClass(animation)}, 1300
+      );
+  }
+</script>
+
+  </head>
+  <body>
+
+
+
+
+<body>
+<div class="demo animated">
+    <p>This text will animate. <a href="" id="ref">Click to animate!</a></p>
+</div>
+
+<!-- http://www.hongkiat.com/blog/animatecss-css3-animation-library/ -->
+
+</body>
+
+</body>
+</html>
+
+<head>

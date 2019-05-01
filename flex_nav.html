@@ -1,0 +1,81 @@
+<style>
+
+nav {
+    display: block;
+}
+
+@media screen and (min-width: 60em){
+  .nr5-l {
+      margin-right: -2rem;
+  }
+}
+
+@media screen and (min-width: 60em){
+  .flex-l {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+  }
+}
+
+.items-center {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.flex-nowrap {
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+}
+
+.flex-row {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+
+.dn {
+    display: none;
+}
+
+.link {
+    text-decoration: none;
+    -webkit-transition: all .1s ease-in;
+    transition: all .1s ease-in;
+}
+
+.link:link, .link:visited {
+    -webkit-transition: all .1s ease-in;
+    transition: all .1s ease-in;
+}
+.glow {
+    -webkit-transition: opacity .15s ease-in;
+    transition: opacity .15s ease-in;
+}
+.mr5 {
+    margin-right: 2rem;
+}
+.color-inherit {
+    color: inherit;
+}
+.o-60 {
+    opacity: .6;
+}
+.fw6 {
+    font-weight: 600;
+}
+a {
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+
+</style>
+<body>
+<nav class="dn flex-l nr5-l flex-row flex-nowrap items-center nav-app">
+<a href="/icons" class="link color-inherit fw6 mr5 o-60 glow">Icons</a>
+<a href="/how-to-use" class="link color-inherit fw6 mr5">How to Use</a>
+<a href="/support" class="link color-inherit fw6 mr5 o-60 glow">Support</a>
+<a href="/pro" class="link color-inherit fw6 mr5 o-60 glow">Go Pro</a></nav>
+</body>

@@ -1,0 +1,79 @@
+<mjml>
+  <mj-head>
+
+    <mj-title>TEST MJML</mj-title>
+
+    <mj-font name="Raleway" href="https://fonts.googleapis.com/css?family=Raleway:400,600" />
+    <mj-breakpoint width="480px" />
+
+    <mj-attributes>
+      <mj-text padding-bottom="20px" />
+      <mj-class name="blue" color="blue" />
+      <mj-all font-family="Raleway" />
+    </mj-attributes>
+  </mj-head>
+  <mj-body>
+
+    <mj-wrapper background-color="#ededed" padding="0">
+
+      <!-- preamble -->
+      <mj-section>
+        <mj-column>
+          <mj-text font-size="12px" color="#2d2d2d" padding-top="5px" font-family="Raleway, Arial" line-height="1.4" text-align="center">Hello World</mj-text>
+        </mj-column>
+      </mj-section>
+
+      <!-- Company Header -->
+      <mj-section>
+        <mj-column>
+
+          <mj-image width="33" src="https://cdn2.hubspot.net/hubfs/1891588/OMG_NEW_assets/OMG_Black_rgb.png?noresize"></mj-image>
+
+          <mj-divider border-color="#00ff44"></mj-divider>
+        </mj-column>
+      </mj-section>
+
+      <!-- Image -->
+      <mj-section>
+        <mj-column>
+          <mj-image width="600" padding="0" margin="0" src="http://www.online-image-editor.com//styles/2014/images/example_image.png" />
+        </mj-column>
+      </mj-section>
+
+      <!-- Intro text -->
+      <mj-section>
+        <mj-column>
+          <mj-text font-size="20px" color="#2d2d2d" padding-top="40px" font-family="Raleway, Arial" line-height="1.4">Hello World</mj-text>
+
+          <mj-text font-size="20px" color="#2d2d2d" font-family="Raleway, Arial" line-height="1.4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu elit nec leo fringilla lacinia. Nullam malesuada odio id risus condimentum ultricies. Sed vehicula egestas mi et feugiat. Suspendisse rutrum ligula in magna luctus ultrices.</mj-text>
+          <mj-text font-size="20px" color="#2d2d2d" font-family="Raleway, Arial" line-height="1.4">Nulla ullamcorper condimentum mollis. <span class="boldfont">Curabitur luctus</span> sed metus id aliquet. Etiam eleifend, velit vitae eleifend mattis, nisi felis dapibus nulla, vel sagittis ante dui sed nibh. Aenean et mi sed orci suscipit
+            egestas eget nec mi. Ut aliquam metus libero, sed hendrerit massa placerat id.</mj-text>
+          <mj-text font-size="20px" color="#2d2d2d" font-family="Raleway, Arial" line-height="1.4">Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. <strong>Vestibulum</strong> ornare nisl at elit faucibus pulvinar eu venenatis odio.</mj-text>
+          <mj-text font-size="20px" color="#2d2d2d" font-family="Raleway, Arial" line-height="1.4">Nulla sapien eros, scelerisque eget lorem eget, facilisis dictum dui. Duis justo urna, facilisis sed varius in, tempus quis tortor. Nulla lobortis enim lectus, eget semper sapien facilisis eu. Sed nibh sem, elementum ac nisl in, rutrum lacinia
+            augue.
+          </mj-text>
+
+
+        </mj-column>
+      </mj-section>
+
+      <!-- Side image -->
+      <mj-section background-color="#f1f1f1">
+
+        <!-- Left image -->
+        <mj-column width="15%">
+          <mj-image width="22px" margin="0" padding="5px" text-align="left" src="https://cdn2.hubspot.net/hubfs/1891588/OMG_NEW_assets/OMG_Black_rgb.png?noresize" />
+        </mj-column>
+
+        <!-- right paragraph -->
+        <mj-column width="85%">
+
+          <mj-text color="#525252" line-height="1.5">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin rutrum enim eget magna efficitur, eu semper augue semper. Aliquam erat volutpat. Cras id dui lectus. Vestibulum sed finibus lectus.</mj-text>
+
+        </mj-column>
+      </mj-section>
+
+    </mj-wrapper>
+  </mj-body>
+</mjml>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>WORKING EXAMPLE</title>
+
+        <script src="https://use.typekit.net/qrs3mkv.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+        <style type="text/css">
+            /* Set a size for our map container, the Google Map will take up 100% of this container */
+            #map {
+                width: 100vw;
+                height: 50vh;
+            }
+/*            .gmnoscreen, .gmnoprint, gm-style-cc {display:none !important;}*/
+            .gm-style .gm-style-cc span,.gm-style .gm-style-cc a, /* disclaimer txt */
+            .gm-svpc /* streetview dude */
+/*            .gmnoprint .gm-bundled-control .gm-bundled-control-on-bottom*/
+/*            ,.gm-style .gm-style-mtc div*/
+            {display:none !important;}
+            #gmpimg img.gmaps_img {height: 15%; width: 15%; padding: 5%; display:block; margin:10%;}
+            .gmaps_img {}
+            #map h1.firstHeading { font-size: 1em; color:#30B6C9; font-family: brandon-grotesque, sans-serif; font-style: normal; font-weight: 700; }
+            #map #bodyContent p { font-size: 1em; color:#2d2d2d; font-family: brandon-grotesque, sans-serif; font-style: normal; font-weight: 400; }
+            #map #bodyContent a { font-size: 1em; color:#4e4e4e; font-family: brandon-grotesque, sans-serif; font-style: normal; font-weight: 400; text-decoration: none;}
+            #map #bodyContent a:hover { font-weight: 700; text-decoration: none;}
+        </style>
+
+        <!--
+            You need to include this script tag on any page that has a Google Map.
+
+            The following script tag will work when opening this example locally on your computer.
+            But if you use this on a localhost server or a live website you will need to include an API key.
+            Sign up for one here (it's free for small usage):
+                https://developers.google.com/maps/documentation/javascript/tutorial#api_key
+
+            After you sign up, use the following script tag with YOUR_GOOGLE_API_KEY replaced with your actual key.
+                <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_API_KEY"></script>
+        -->
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+     <div id="map"></div>
+ <script>
+ function initMap() {
+ // Styles a map in night mode.
+ var map = new google.maps.Map(document.getElementById('map'), {
+ center: {lat: -37.8170395, lng: 144.9686997},
+ zoom: 17,
+scrollwheel: false,
+ //draggable: draggable,
+ styles: [
+ {
+ "featureType": "all",
+ "elementType": "labels.text",
+ "stylers": [
+ {
+ "color": "#e6e6e6"
+ }
+ ]
+ },
+ {
+ "featureType": "all",
+ "elementType": "labels.text.fill",
+ "stylers": [
+ {
+ "color": "#464646"
+ }
+ ]
+ },
+ {
+ "featureType": "administrative",
+ "elementType": "labels.text.fill",
+ "stylers": [
+ {
+ "color": "#444444"
+ }
+ ]
+ },
+ {
+ "featureType": "landscape",
+ "elementType": "all",
+ "stylers": [
+ {
+ "color": "#f2f2f2"
+ }
+ ]
+ },
+ {
+ "featureType": "poi",
+ "elementType": "all",
+ "stylers": [
+ {
+ "visibility": "off"
+ }
+ ]
+ },
+ {
+ "featureType": "road",
+ "elementType": "all",
+ "stylers": [
+ {
+ "saturation": -100
+ },
+ {
+ "lightness": 45
+ }
+ ]
+ },
+ {
+ "featureType": "road.highway",
+ "elementType": "all",
+ "stylers": [
+ {
+ "visibility": "simplified"
+ }
+ ]
+ },
+ {
+ "featureType": "road.arterial",
+ "elementType": "labels.icon",
+ "stylers": [
+ {
+ "visibility": "off"
+ }
+ ]
+ },
+ {
+ "featureType": "transit",
+ "elementType": "all",
+ "stylers": [
+ {
+ "visibility": "off"
+ }
+ ]
+ },
+ {
+ "featureType": "water",
+ "elementType": "all",
+ "stylers": [
+ {
+ "color": "#e5e5e5"
+ },
+ {
+ "visibility": "on"
+ }
+ ]
+ }
+]
+ });
+
+ var image = {
+ path: 'M19.4,3.4C17.3,1.2,14.7,0,11.5,0s-6,1.2-8.1,3.4C1.2,5.6,0,8.3,0,11.5c0,1.6,0.2,3,0.8,4l8.1,17.3 c0.2,0.4,0.6,0.8,1,1.2c0.4,0.2,1,0.4,1.6,0.4s1-0.2,1.6-0.4c0.4-0.2,0.8-0.6,1-1.2l8.1-17.3c0.4-1,0.8-2.4,0.8-4 C22.8,8.3,21.8,5.6,19.4,3.4z M11.3,17c-3.1,0-5.6-2.5-5.6-5.6s2.5-5.6,5.6-5.6s5.6,2.5,5.6,5.6S14.4,17,11.3,17z',
+ strokeColor: 'none',
+ strokeOpacity: 0,
+ strokeWeight: 0,
+ fillColor: '#30B6C9',
+ fillOpacity: 1,
+ rotation: 0,
+ scale: 2.0,
+ anchor: new google.maps.Point(12.5, 36)
+ };
+
+var contentString = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+        //    '<h1 id="firstHeading" class="firstHeading">Pomodoro Sardo</h1>'+
+            '<div id="gmpimg"><img src="http://localhost:8888/SARDO_dev/wp-content/themes/Sardo/library/svg/Pomodoro_Sardo_mono.svg" class="gmaps_img"/></div>'
+            '<div id="bodyContent">'+
+            '<p>180, Flinders Street, Melbourne</p>'+
+            '<p><a href="">Get directions</a></p>'+
+            '</div>'+
+            '</div>';
+         var infoWindow = new google.maps.InfoWindow({
+            content: contentString
+         });
+
+ var mapMarker = new google.maps.Marker({
+ position: {lat: -37.8170395, lng: 144.9686997},
+ map: map,
+ icon: image,
+ // clickable: false,
+ draggable: false
+ });
+
+ }
+ </script>
+ <script async defer
+ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCJwv301MyHoqV7TxySYHRSleNu0h6vYM&callback=initMap">
+ </script>
+
+    </head>
+    <body>
+
+        <!-- The element that will contain our Google Map. This is used in both the Javascript and CSS above. -->
+        <div id="map"></div>
+
+         <script async defer
+         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCJwv301MyHoqV7TxySYHRSleNu0h6vYM&callback=initMap">
+         </script>
+
+    </body>
+</html>

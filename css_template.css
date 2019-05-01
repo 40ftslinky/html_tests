@@ -1,0 +1,231 @@
+/* css template */
+
+/* Table of contents
+––––––––––––––––––––––––––––––––––––––––––––––––––
+
+-  1.  DOCUMENT
+        - Grid
+        - Base Styles
+-  2.  TYPOGRAPHY
+-  3.  COLOURS
+        -- Solids
+        -- Gradients
+-  4.  NAV
+        -- Logo
+        -- sub-menu
+-  5.  HEADERS
+-  6.  SECTIONS
+        -- Content
+        -- Headings
+        -- Text
+        -- Grids
+        -- Links etc
+        -- Buttons
+        -- Icons
+-  7.  FOOTER
+-  8.  CSS ANIMATIONS
+-  9.  FORMS
+-  10. VARIOUS GLOBAL
+        - Links
+        - Buttons
+        - Forms
+        - Lists
+        - Code
+        - Tables
+        - Spacing
+        - Utilities
+        - Clearing
+-  11. GMAPS
+-  12. MEDIA QUERIES
+-  13. END
+-  14. EXAMPLE
+
+
+ */
+
+
+
+/* ==========================================================================
+   DOCUMENT
+   ========================================================================== */
+
+   /* sub section
+   --------------*/
+
+
+   /* Grid
+   –––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+
+/* ==========================================================================
+   TYPOGRAPHY
+   ========================================================================== */
+
+
+/* ==========================================================================
+   COLOURS
+   ========================================================================== */
+
+
+/* ==========================================================================
+   NAV
+   ========================================================================== */
+
+
+/* ==========================================================================
+   HEADERS
+   ========================================================================== */
+
+
+/* ==========================================================================
+   SECTIONS
+   ========================================================================== */
+
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+
+
+/* ==========================================================================
+   ANIMATIONS
+   ========================================================================== */
+
+
+/* ==========================================================================
+   FORMS
+   ========================================================================== */
+
+
+/* ==========================================================================
+   VARIOUS GLOBAL
+   ========================================================================== */
+
+
+/* ==========================================================================
+   GMAPS
+   ========================================================================== */
+
+
+/* ==========================================================================
+   MEDIA QUERIES
+   ========================================================================== */
+
+    /* Media Queries
+    –––––––––––––––––––––––––––––––––––––––––––––––––– */
+    /*
+    Note: The best way to structure the use of media queries is to create the queries
+    near the relevant code. For example, if you wanted to change the styles for buttons
+    on small devices, paste the mobile query code up in the buttons section and style it
+    there.
+    */
+
+
+    /* Larger than mobile */
+    @media (min-width: 400px) {}
+
+    /* Larger than phablet (also point when grid becomes active) */
+    @media (min-width: 550px) {}
+
+    /* Larger than tablet */
+    @media (min-width: 750px) {}
+
+    /* Larger than desktop */
+    @media (min-width: 1000px) {}
+
+    /* Larger than Desktop HD */
+    @media (min-width: 1200px) {}
+
+
+
+    /* Extra Large Monitors*/
+    @media ( min-width: 1801px ) {
+    /**/
+    }
+
+    /* Large Monitors*/
+    @media ( min-width: 1405px ) and ( max-width: 1800px) {
+        /**/
+    }
+
+    /* Standard laptops & desktops */
+    @media ( min-width: 1100px ) and ( max-width: 1404px) {
+        /**/
+    }
+    @media only screen and (max-width: 1200px) {
+        /**/
+    }
+
+    /* landscape Tablets */
+    @media ( min-width: 981px ) and ( max-width: 1099px ) {
+        /**/
+    }
+
+    @media only screen and (max-width: 980px) {
+      /**/
+    }
+
+    /* Portrait Tablets*/
+    @media ( min-width: 768px ) and ( max-width: 980px ) {
+        /**/
+    }
+
+    /* Landscape Phones */
+    @media ( min-width: 480px ) and ( max-width: 767px ) {
+        /* - */
+    }
+
+
+    /* Portrait Phones */
+    @media ( min-width: 415px ) and ( max-width: 479px ) {
+        /**/
+    }
+
+    @media ( min-width: 376px ) and ( max-width: 414px ) {
+         /**/
+    }
+
+
+    /* Portrait Phones */
+    @media ( min-width: 320px ) and ( max-width: 375px ) {
+        /**/
+    }
+
+
+
+/* ==========================================================================
+   SET UP EXAMPLE
+   ========================================================================== */
+
+   .selector {
+       /* Positioning */
+       position: absolute;
+       z-index: 10;
+       top: 0;
+       right: 0;
+       bottom: 0;
+       left: 0;
+
+       /* Display & Box Model */
+       display: inline-block;
+       overflow: hidden;
+       box-sizing: border-box;
+       width: 100px;
+       height: 100px;
+       padding: 10px;
+       border: 10px solid #333;
+       margin: 10px;
+
+       /* Other */
+       background: #000;
+       color: #fff;
+       font-family: sans-serif;
+       font-size: 16px;
+       text-align: right;
+   }
+
+
+/* ==========================================================================
+   END
+   ========================================================================== */

@@ -1,0 +1,34 @@
+<?php
+add_action( 'wp_footer', 'my_custom_popup_scripts', 500 );
+function my_custom_popup_scripts() { ?>
+<script type="text/javascript">
+      (function ($, document, undefined) {
+
+          jQuery('.popmake .wp_submit_class').on('submitResponse', function(e, response) {
+                var $popup = jQuery(this).parents('.pum'),
+                  errors = response.errors;
+                if (errors === false) {
+                    $popup.trigger('pumSetCookie');
+                    $('.package_offer_price').addClass('animated fadeIn');
+
+                  setTimeout(function () {
+                      $popup.popmake('close');
+                  }, 5000); // 5 seconds
+                }
+          });
+
+      }(jQuery, document))
+</script><?php
+}
+
+<script> // final
+  jQuery(function ($) {
+      $( document ).ready(function() {
+          $('.wp_submit_class').on('click', function(){
+              event.preventDefault();
+              $('.package_offer_price').addClass('animated fadeIn');
+              $('#popmake-26838').popmake('close');
+          });
+      });
+  });
+</script>

@@ -1,0 +1,110 @@
+
+/***************************************************/
+/*** Hamburger Menu ***/
+
+.et_mobile_menu li a {font-size: 1.2em}
+
+    @media only screen and ( min-width:980px ) {
+        .et_fullwidth_nav #main-header .container {
+        		width: 100%;
+        		max-width: 100%;
+        		padding-right: 2%;
+        		padding-left: 2%;
+        }
+        #et_mobile_nav_menu { display:block }
+        #top-menu-nav { display:none; }
+        .et_mobile_menu {
+          margin-left: 75% !important; margin-right: 0% !important;
+          padding: 2% 1% !important;
+        }
+        .et_menu_container { margin-right: 5% !important; }
+    }
+
+    @media only screen and ( max-width:1600px ) {
+        .et_mobile_menu {
+          /*margin-left: 75% !important; margin-right: 0% !important;*/
+          padding: 2% 4% 2% 0 !important;
+        }
+    }
+
+    @media only screen and ( max-width:979px ) {
+        #main-header { padding-right: 0px;	padding-left: 0px; }
+        #main-header .et_menu_container { width:100%; }
+        #main-header .logo_container { padding-left: 5%; }
+        #et-top-navigation { margin-right: 5%; }
+        .et_mobile_menu { margin-left: 0% !important; margin-right: 0% !important; }
+        .et_menu_container { margin-right: 5% !important;}
+        .et_mobile_menu { text-align: center;}
+    }
+
+
+.mobile_menu_bar:before {
+     content: "\61";
+     font-size: 32px;
+     left: 0;
+     position: relative;
+     top: 0;
+     cursor: pointer;
+ }
+
+.mobile_nav.opened .mobile_menu_bar:before {
+     content: "\4d";
+}
+
+    @media (max-width: 980px) {
+        .et_non_fixed_nav.et_transparent_nav #main-header,
+        .et_non_fixed_nav.et_transparent_nav #top-header,
+        .et_fixed_nav #main-header, .et_fixed_nav #top-header {
+            position: fixed !important;
+        }
+        .et_mobile_menu {
+            overflow: scroll !important;
+            max-height: 83vh;
+        }
+
+        #main-header .logo_container,
+        #main-header.et-fixed-header .logo_container a.secondary-logo-wrapper { padding-left: 5%; }
+
+
+        .et-fixed-header #secondary-logo { height:43px !important; }
+        .logo_container a.secondary-logo-wrapper {
+            top:20px !important;
+            left:4px !important;
+          }
+    }
+
+body #page-container #main-header #logo { }
+
+.logo_container {
+    /*overflow:hidden; */
+}
+
+#secondary-logo {
+    display: inline-block;
+    float: none;
+    max-height: 54%;
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+
+.logo_container a.secondary-logo-wrapper {
+    position:absolute;
+    display: inline;
+    top:11px;
+    left:3px;
+    /*display: inline-block;*/
+    float: none;
+    /*max-height: 54%;*/
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+
+.secondary-logo-wrapper img {
+    vertical-align: middle;
+}
+
+.logo_container a {
+    display: inline;
+}
+
+.logo_container #logo { }

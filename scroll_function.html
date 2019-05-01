@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>JS TEST</title>
+
+<style type="text/css">
+
+
+.wrapper {
+  display: block;
+  width: 600px;
+  margin: 0;
+  height: 400px;
+  background-color: #ededed;
+  padding: 20px;
+  overflow-y: scroll;
+}
+.container {
+width: 400px;
+height: 300px;
+display: block;
+position:relative;
+
+}
+.inner {
+width: auto;
+margin: 0 auto;
+height: 400px;
+background-color:#00ff4e;
+}
+.inner.box2 p {
+display: none;
+}
+.inner.box2 p.animated {
+display: block;
+-webkit-animation-name: fadeInUp;
+animation-name: fadeInUp;
+-webkit-animation-duration: 1.5s;
+animation-duration: 1.5s;
+-webkit-animation-fill-mode: both;
+animation-fill-mode: both;
+-webkit-animation-delay: 0.5s;
+animation-delay: 0.5s;
+}
+
+.inner.box2 p.notdisp {
+display: block;
+-webkit-animation-name: fadeOutDown;
+animation-name: fadeOutDown;
+-webkit-animation-duration: 1.5s;
+animation-duration: 1.5s;
+-webkit-animation-fill-mode: both;
+animation-fill-mode: both;
+-webkit-animation-delay: 0.5s;
+animation-delay: 0.5s;
+}
+
+@-webkit-keyframes fadeInUp {
+0% {
+  opacity: 0;
+  -webkit-transform: translate3d(0, 10%, 0);
+  transform: translate3d(0, 10%, 0);
+}
+
+100% {
+  opacity: 1;
+  -webkit-transform: none;
+  transform: none;
+}
+}
+
+@keyframes fadeInUp {
+0% {
+  opacity: 0;
+  -webkit-transform: translate3d(0, 10%, 0);
+  transform: translate3d(0, 10%, 0);
+}
+
+100% {
+  opacity: 1;
+  -webkit-transform: none;
+  transform: none;
+}
+}
+
+@-webkit-keyframes fadeOutDown {
+0% {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 10%, 0);
+  transform: translate3d(0, 10%, 0);
+}
+
+100% {
+  opacity: 0;
+  -webkit-transform: none;
+  transform: none;
+}
+}
+
+@keyframes fadeOutDown {
+0% {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 10%, 0);
+  transform: translate3d(0, 10%, 0);
+}
+
+100% {
+  opacity: 0;
+  -webkit-transform: none;
+  transform: none;
+}
+}
+  </style>
+
+
+  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+  <script type="text/javascript">
+
+  $(document).ready(function() {
+
+
+    $('.wrapper').scroll( function(){
+          // This is then function used to detect if the element is scrolled into view
+          function elementScrolled(elem)
+          {
+              var docViewTop = $(window).scrollTop();
+              var docViewBottom = docViewTop + $(window).height();
+              var elemTop = $(elem).offset().top;
+              return ((elemTop <= docViewBottom) && (elemTop >= docViewTop));
+          }
+
+          // This is where we use the function to detect if ".box2" is scrolled into view, and when it is add the class ".animated" to the <p> child element
+          if(elementScrolled('.box2')) {
+              var els = $('.box2 p'),
+                  i = 0,
+                  f = function () {
+                      $(els[i++]).addClass('animated');
+                      if(i < els.length) setTimeout(f, 300);
+                  };
+              f();
+          }
+          else if(elementScrolled('.box2')) {
+              var els = $('.box2 p.animated'),
+                  i = 0,
+                  f = function () {
+                      $(els[i++]).removeClass('animated');
+                      $(els[i++]).addClass('notdisp');
+                      if(i < els.length) setTimeout(f, 300);
+                  };
+              f();
+          }
+          });
+      });
+
+      </script>
+
+
+  </head>
+  <body>
+<!-- https://www.thewebtaylor.com/articles/how-to-detect-if-an-element-is-scrolled-into-view-using-jquery -->
+<div class="wrapper">
+            <div class="container">
+                <div class="inner box1">
+                    <p>This text is static.</p>
+                </div>
+                <div class="inner box2 ">
+                    <p>This text fades in.</p>
+                    <div class="demo animated">
+                        <p>This text will animate. <a href="" id="ref">Click to animate!</a></p>
+                    </div>
+                </div>
+            </div>
+</div>
+  </body>
+</html>
