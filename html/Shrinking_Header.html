@@ -1,0 +1,332 @@
+
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Shrinking Header</title>
+  <meta name="description" content="Test Content">
+  <meta name="author" content="Jez">
+
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+<!-- https://codepen.io/tomdurkin/pen/nvAjd -->
+  <style>
+
+  body{
+    background: #eee;
+    margin: 0;
+    padding: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #333;
+  }
+  header{
+    width: 100%;
+    padding: 60px 0;
+    background: #fff;
+    border-bottom: 1px solid #e1e1e1;
+    /* animation magic */
+    transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    z-index: 9999;
+    top: 0;
+    position: fixed;
+  }
+  header h1{
+    font-size: 30px;
+    text-indent: 40px;
+    font-weight:  bold;
+  }
+  .container{
+    width: 40%;
+    margin: 180px auto;
+  }
+  .shrink{
+    padding: 20px 0;
+    }
+  p{
+    margin: 0 0 40px 0;
+    line-height: 24px;
+   }
+  strong{
+    font-weight: bold;
+  }
+
+  /* -- green panel -- */
+
+  section {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    position: relative;
+    margin-top: 48px;
+    margin-bottom: 48px;
+}
+
+  #pricing-model {
+    margin-bottom: 144px;
+    background: -webkit-radial-gradient(top left,circle,#34dd87 0%,#34ddbf 100%);
+    background: radial-gradient(circle at top left,#34dd87 0%,#34ddbf 100%);
+    background-color: #34dd87;
+    box-shadow: 0 48px 48px -32px rgba(52,221,135,.12), 0 96px 96px -64px rgba(52,221,135,.48);
+  }
+  .card:first-of-type {
+      margin-top: 0;
+  }
+  .row-container {
+      width: 1120px;
+      max-width: 90%;
+      margin: auto;
+      position: relative;
+  }
+  .row.card, .card .row {
+      margin-right: 0;
+      margin-left: 0;
+  }
+  .row {
+      position: relative;
+      display: -webkit-box;
+      display: flex;
+      flex-wrap: wrap;
+      margin: 4% -2.5%;
+      max-width: 105%;
+  }
+
+  #pricing-model .column-container.card {
+      padding-bottom: 80px;
+      margin-bottom: -144px;
+  }
+  #pricing-model .column-container {
+      padding-top: 24px;
+  }
+
+  .rellax {
+      -webkit-transition: none;
+      transition: none !important;
+  }
+  /* .parallax {
+    perspective: 1px;
+    min-height: 10vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+  } */
+
+  .rellax::after,
+  .parallax::after {
+    /* Display and position the pseudo-element */
+    content: " ";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    /* Move the pseudo-element back away from the camera,
+     * then scale it back up to fill the viewport.
+     * Because the pseudo-element is further away, it appears to move more slowly, like in real life. */
+    transform: translateZ(-1px) scale(1.5);
+    /* Force the background image to fill the whole element. */
+    background-size: 100%;
+    /* Keep the image from overlapping sibling elements. */
+    z-index: -1;
+  }
+  @media only screen and (min-width: 769px){
+  .column-container {
+      -webkit-box-flex: 1;
+      flex: 1;}
+  }
+  .column-container {
+      padding: 0 2.5%;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      flex-direction: column;
+      display: -webkit-box;
+      display: flex;
+  }
+  .column {
+      display: -webkit-box;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      flex-direction: column;
+      min-width: 100%;
+  }
+  .card {
+      border-radius: 8px;
+      background-color: #fff;
+      padding: 32px;
+      -webkit-transition: 300ms all cubic-bezier(.4,0,.2,1);
+      transition: 300ms all cubic-bezier(.4,0,.2,1);
+      margin-top: 24px;
+      box-shadow: 0 8px 60px 0 rgba(103,151,255,.11), 0 12px 90px 0 rgba(103,151,255,.11);
+  }
+
+  /* -- button -- */
+
+  .column:not(.inline-elements)>:last-child {
+      margin-bottom: 0;
+  }
+  .accent-dark-blue .button.primary-button, .button.primary-button.accent-dark-blue, .accent-dark-blue .category-circle, .category-circle.accent-dark-blue {
+      background: -webkit-linear-gradient(330deg,rgba(38,46,235,0) 0%,#151de3 100%);
+      background: linear-gradient(120deg,rgba(38,46,235,0) 0%,#151de3 100%);
+      background-color: #2655eb;
+  }
+  .accent-dark-blue .button.primary-button, .button.primary-button.accent-dark-blue, .accent-dark-blue .category-circle, .category-circle.accent-dark-blue {
+      background: -webkit-linear-gradient(330deg,rgba(38,46,235,0) 0%,#151de3 100%);
+      background: linear-gradient(120deg,rgba(38,46,235,0) 0%,#151de3 100%);
+      background-color: #4526eb;
+  }
+  .centered .button {
+      align-self: center;
+  }
+  .button.primary-button {
+      font-size: 15px;
+      padding: 12px 32px;
+  }
+  .accent-dark-blue .button, .button.accent-dark-blue, .accent-dark-blue.tab-navigation .current-item:after {
+      background-color: #262eeb;
+  }
+  p+.button {
+      margin-top: 1.5em;
+  }
+  .accent-dark-blue .headline-1, .accent-dark-blue .headline-2, .accent-dark-blue .headline-3, .accent-dark-blue .headline-4, .accent-dark-blue .colored-header, .accent-dark-blue .subhead, .accent-dark-blue .subhead-small, .accent-dark-blue a, .accent-dark-blue .current-item, .tab-navigation .accent-dark-blue a:hover, .accent-dark-blue.tab-navigation a:hover {
+      color: #262eeb;
+  }
+  .button, .card-button {
+      display: -webkit-box;
+      display: flex;
+      -webkit-box-align: center;
+      align-items: center;
+      text-decoration: none;
+  }
+  .button {
+      font-weight: 900;
+      font-size: 12px;
+      line-height: 28px;
+      color: #fff!important;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-radius: 100px;
+      padding: 8px 20px;
+      -webkit-box-pack: center;
+      justify-content: center;
+      align-self: flex-start;
+      border: none;
+      margin-bottom: 16px;
+      -webkit-transition: 300ms all cubic-bezier(.4,0,.2,1);
+      transition: 300ms all cubic-bezier(.4,0,.2,1);
+  }
+
+  </style>
+
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+  <script type="text/javascript" >
+  	$(document).on("scroll", function(){
+  		if
+        ($(document).scrollTop() > 100){
+  		  $("header").addClass("shrink");
+  		}
+  		else
+  		{
+  			$("header").removeClass("shrink");
+  		}
+  	});
+
+
+
+  </script>
+
+</head>
+
+<body>
+
+
+<header>
+  <h1>Lets shrink ;)</h1>
+</header>
+
+<section class="container">
+  <p><strong>Scroll down to see the magic in action...</strong></p>
+  <p>
+  Sed nulla cred Banksy jean shorts. Reprehenderit mumblecore incididunt anim accusamus. Keffiyeh Cosby sweater in cornhole elit, tote bag cillum banjo. Shabby chic YOLO banh mi sunt. Artisan blog Neutra, polaroid adipisicing Banksy +1 lo-fi umami distillery fixie seitan. Semiotics artisan flannel mollit craft beer Blue Bottle. Bespoke biodiesel banh mi literally.
+  </p>
+
+  <p>
+  YOLO Marfa drinking vinegar polaroid laborum veniam, est disrupt umami wayfarers try-hard before they sold out fap. Culpa bitters kitsch adipisicing, nesciunt brunch squid minim post-ironic assumenda irony. Qui bespoke organic, photo booth authentic PBR velit before they sold out fingerstache nostrud flannel. Leggings chillwave est sustainable, tofu raw denim sint 8-bit keffiyeh High Life. Nostrud Austin put a bird on it, typewriter Godard gastropub ennui mlkshk deserunt assumenda. Blog letterpress meggings, nihil Shoreditch Etsy try-hard vinyl Echo Park cray farm-to-table McSweeney's High Life. Qui stumptown ex Cosby sweater street art ethnic irure dolore.
+  </p>
+
+  <p>
+  In post-ironic umami, sint +1 gluten-free pickled disrupt vinyl jean shorts velit placeat est American Apparel. Flannel cupidatat deserunt master cleanse cornhole vinyl, Banksy 8-bit fugiat pariatur. Schlitz Intelligentsia incididunt ugh, literally minim skateboard ennui. Labore deep v placeat, mlkshk biodiesel church-key post-ironic Cosby sweater twee nesciunt Blue Bottle. Salvia vero esse, exercitation cliche chambray aliquip gluten-free yr post-ironic pug narwhal kale chips ennui hella. Consequat bitters salvia delectus esse. Fap kogi forage culpa Tumblr, accusamus PBR Thundercats PBR&B banjo ullamco 8-bit bitters minim you probably haven't heard of them.
+  </p>
+
+  <p>
+  Sed nulla cred Banksy jean shorts. Reprehenderit mumblecore incididunt anim accusamus. Keffiyeh Cosby sweater in cornhole elit, tote bag cillum banjo. Shabby chic YOLO banh mi sunt. Artisan blog Neutra, polaroid adipisicing Banksy +1 lo-fi umami distillery fixie seitan. Semiotics artisan flannel mollit craft beer Blue Bottle. Bespoke biodiesel banh mi literally.
+  </p>
+
+</section>
+
+<section>
+  <div id="pricing-model" class="row-container card">
+<!--
+    <svg viewBox="0 0 300 322">
+    <defs>
+    <linearGradient id="gradient-4" gradientTransform="rotate(90)">
+    <stop offset="0%" stop-color="rgba(233,244,255,0)"></stop>
+    <stop offset="100%" stop-color="rgba(233,244,255,1)"></stop>
+    </linearGradient>
+    </defs>
+    <path fill="url(#gradient-4)" d="M300,211.09V110.76c0-21.47-11.55-41.27-30.23-51.85L179.35,7.73c-18.21-10.31-40.48-10.31-58.69,0L30.23,58.91 C11.55,69.48,0,89.29,0,110.76v100.33c0,21.47,11.55,41.27,30.23,51.85l90.42,51.18c18.21,10.31,40.48,10.31,58.69,0l90.42-51.18 C288.45,252.36,300,232.55,300,211.09z"></path>
+    </svg>
+     -->
+  <div class="row">
+    <div class="column-container">
+      <div class="column dark-background">
+        <h2 class="headline-2">Power</h2>
+        <h2>Power Your Entire Team With a Single Membership</h2>
+        <p class="lead">Your entire design team can use Divi with a single membership. Optimize your design work flow with Divi's incredible set of speed and efficiency tools.</p>
+      </div>
+    </div>
+    <div  data-rellax-speed="2" class="column-container card rellax" style="transform: translate3d(0px, 20px, 0px);">
+      <div class="column centered accent-dark-blue">
+        <h2 class="headline-2">Unlimited</h2>
+        <h2>Build Unlimited Websites With a Single License</h2>
+        <p>A single subscription gets you unlimited use of our themes and plugins. Install them on as many websites as you like using a single license. Use them on unlimited client websites too.</p>
+        <a class="button primary-button" href="#">View Pricing</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section  class="container">
+
+<p>
+YOLO Marfa drinking vinegar polaroid laborum veniam, est disrupt umami wayfarers try-hard before they sold out fap. Culpa bitters kitsch adipisicing, nesciunt brunch squid minim post-ironic assumenda irony. Qui bespoke organic, photo booth authentic PBR velit before they sold out fingerstache nostrud flannel. Leggings chillwave est sustainable, tofu raw denim sint 8-bit keffiyeh High Life. Nostrud Austin put a bird on it, typewriter Godard gastropub ennui mlkshk deserunt assumenda. Blog letterpress meggings, nihil Shoreditch Etsy try-hard vinyl Echo Park cray farm-to-table McSweeney's High Life. Qui stumptown ex Cosby sweater street art ethnic irure dolore.
+</p>
+
+<p>
+In post-ironic umami, sint +1 gluten-free pickled disrupt vinyl jean shorts velit placeat est American Apparel. Flannel cupidatat deserunt master cleanse cornhole vinyl, Banksy 8-bit fugiat pariatur. Schlitz Intelligentsia incididunt ugh, literally minim skateboard ennui. Labore deep v placeat, mlkshk biodiesel church-key post-ironic Cosby sweater twee nesciunt Blue Bottle. Salvia vero esse, exercitation cliche chambray aliquip gluten-free yr post-ironic pug narwhal kale chips ennui hella. Consequat bitters salvia delectus esse. Fap kogi forage culpa Tumblr, accusamus PBR Thundercats PBR&B banjo ullamco 8-bit bitters minim you probably haven't heard of them.
+</p>
+  <p>
+YOLO Marfa drinking vinegar polaroid laborum veniam, est disrupt umami wayfarers try-hard before they sold out fap. Culpa bitters kitsch adipisicing, nesciunt brunch squid minim post-ironic assumenda irony. Qui bespoke organic, photo booth authentic PBR velit before they sold out fingerstache nostrud flannel. Leggings chillwave est sustainable, tofu raw denim sint 8-bit keffiyeh High Life. Nostrud Austin put a bird on it, typewriter Godard gastropub ennui mlkshk deserunt assumenda. Blog letterpress meggings, nihil Shoreditch Etsy try-hard vinyl Echo Park cray farm-to-table McSweeney's High Life. Qui stumptown ex Cosby sweater street art ethnic irure dolore.
+</p>
+
+<p>
+In post-ironic umami, sint +1 gluten-free pickled disrupt vinyl jean shorts velit placeat est American Apparel. Flannel cupidatat deserunt master cleanse cornhole vinyl, Banksy 8-bit fugiat pariatur. Schlitz Intelligentsia incididunt ugh, literally minim skateboard ennui. Labore deep v placeat, mlkshk biodiesel church-key post-ironic Cosby sweater twee nesciunt Blue Bottle. Salvia vero esse, exercitation cliche chambray aliquip gluten-free yr post-ironic pug narwhal kale chips ennui hella. Consequat bitters salvia delectus esse. Fap kogi forage culpa Tumblr, accusamus PBR Thundercats PBR&B banjo ullamco 8-bit bitters minim you probably haven't heard of them.
+</p>
+</section>
+
+  <script src="js/scripts.js"></script>
+  <script src="https://cdn.rawgit.com/dixonandmoe/rellax/master/rellax.min.js"></script>
+<script>
+  var rellax = new Rellax('.rellax',{horizontal: false, vertical: true, speed: 2});
+</script>
+</body>
+</html>
